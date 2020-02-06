@@ -17,6 +17,7 @@ module.exports = (env = {}) => {
         const plugins = [
             new HtmlWebpackPlugin({
                 title: 'Song bird',
+                favicon: 'public/favicon.png',
                 template: 'public/index.html'
             })
         ];
