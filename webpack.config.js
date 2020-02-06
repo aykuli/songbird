@@ -21,12 +21,12 @@ module.exports = (env = {}) => {
                 template: 'public/index.html'
             })
         ];
+
         if (isProd) {
             plugins.push(new MiniCssExtractPlugin({
                 filename: 'style-[hash:8].css'
             }));
         }
-
         return plugins;
     }
 
@@ -34,7 +34,7 @@ module.exports = (env = {}) => {
         mode: isProd ? 'production' : isDev && "development",
 
         entry: './src/index.js',
-
+        
         output: {
             filename: isProd ? 'main-[hash:8].js' : undefined
         },

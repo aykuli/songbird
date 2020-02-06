@@ -1,1 +1,0 @@
-export const flickrKey = '26eb7b127efdacfa523f2ab2ae44874d';
