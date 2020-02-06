@@ -1,4 +1,4 @@
-.player {
+.guess {
     display: flex;    
     flex-wrap: wrap;
     margin-bottom: 40px;
@@ -25,7 +25,7 @@
         line-height: 50px;
     }
 
-    &__guess {
+    &__wrap {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -44,20 +44,24 @@
 }
 
 @media(min-width: 1200px) {
-    .player {
+    .guess {
         border-radius: 5px;
     }
 }
 
 @media(max-width: 500px) {
-    .player {
+    .guess {
         padding: 20px;
     }
 }
 
 @media(max-width: 350px) {
-    .player {
+    .guess {
         padding-right: 0;
         padding-left: 0;
     }
+}
+
+.rhap_container {
+    background-color: transparent;
 }
