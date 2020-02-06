@@ -1,12 +1,18 @@
 export default class BirdImage {
-    _flickrKey = '26eb7b127efdacfa523f2ab2ae44874d';
+    _unsplasKey = 'd35b693bbc2465fad89fead4a6ea958ac2741d9791a9ece87994a879cdc68718'
+    _urlBase = `https://api.unsplash.com/search/photos?page=1&per_page=100&client_id=${this._unsplasKey}&query=`;
 
-    _apiBase = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this._flickrKey}&tagmode=all&format=json&nojsoncallback&tags=`;
     getImage = async (birdName) => {
-        const url = `${this._apiBase}${birdName}`;
-        console.log(url)
-        const res = await fetch(url)
-        return res;
+        const url = `${this._urlBase}${birdName}`;
+
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            return json.results[0].urls.small;
+        } catch (err) {
+            // тут вернуть изображдение по умолчанию
+            console.log('вернуть изображдение по умолчанию')
+        }
     }
 }
 

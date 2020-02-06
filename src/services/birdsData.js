@@ -3,8 +3,24 @@ export default [
         id: 0,
         name: 'Аист Дальневосточный',
         species: 'Ciconia boyciana',
-        description: 'Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».',
-        image: 'https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg',
-        audio: 111,
-    }
+        description: '',
+        imgTag: 'ciconia',
+        audioTag: 'ciconia',
+    },
+    {
+        id: 1,
+        name: 'Ворона',
+        species: '',
+        description: '',
+        imgTag: '',
+        audioTag: '',
+    },
+    {
+        id: 2,
+        name: 'Серый гусь',
+        species: 'Anser ancer',
+        description: '',
+        imageTag: 'ancer',
+        audioTag: 'caerulescens',
+    },    
 ]
