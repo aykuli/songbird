@@ -1,6 +1,5 @@
 .player {
-    display: flex;
-    align-items: flex-end;    
+    display: flex;    
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 40px;
@@ -9,6 +8,39 @@
 
     background-color: #E95420;
 
+    &__img {
+        background-image: url(./placeholder.jpg);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+    }
+
+    &__title {
+        margin: 20px 0;
+        padding: 0;
+        
+        font-family: 'Oswald', sans-serif;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    &__guess {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 0 40px 40px;
+
+        & figure {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__audio {
+        width: 100%;
+        background-color:transparent;
+    }
 }
 
 @media(min-width: 1200px) {
