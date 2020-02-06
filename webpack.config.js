@@ -16,14 +16,13 @@ module.exports = (env = {}) => {
     const getPlugins = () => {
         const plugins = [
             new HtmlWebpackPlugin({
-                title: 'Hello Aynur',
-                buildTime: new Date().toISOString(),
+                title: 'Song bird',
                 template: 'public/index.html'
             })
         ];
         if (isProd) {
             plugins.push(new MiniCssExtractPlugin({
-                filename: 'main-[hash:8].css'
+                filename: 'style-[hash:8].css'
             }));
         }
 
@@ -32,6 +31,8 @@ module.exports = (env = {}) => {
 
     return {
         mode: isProd ? 'production' : isDev && "development",
+
+        entry: './src/index.js',
 
         output: {
             filename: isProd ? 'main-[hash:8].js' : undefined
