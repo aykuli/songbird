@@ -9,7 +9,7 @@ const items = [
 ];
 
 const BirdsList = () => (
-    <ul className="birds-list">
+    <ul className="row__child birds-list">
         {
         items.map((item, i) => {
             let isRight = false;
