@@ -11,7 +11,11 @@ const items = [
 const BirdsList = () => (
     <ul className="birds-list">
         {
-        items.map(item => <BirdItem name={item}/>)
+        items.map((item, i) => {
+            let isActive = false;
+            if (i === 2) isActive = true;
+            return <BirdItem name={item} isActive={isActive} />;
+        })
         }
     </ul>
 );
