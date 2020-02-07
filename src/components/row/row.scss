@@ -5,7 +5,7 @@
 
     &__child {
         flex-grow: 1;
-        max-width: calc(100% - 100px);
+        width: calc(50% - 50px);
         min-width: 300px;
         margin-bottom: 50px;
         padding: 0;

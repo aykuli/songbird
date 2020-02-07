@@ -22,8 +22,7 @@ const GuessPlayer = (props) => {
                     src={audioSource}
                     showJumpControls={false}
                     showLoopControl={false}
-                    showDownloadProgress={true}
-                    onPlay={function(){console.log('onPlay: ', this)}}                    
+                    showDownloadProgress={true}                  
                 />
             </div>
         </div>
