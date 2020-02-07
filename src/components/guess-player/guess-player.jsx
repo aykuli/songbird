@@ -2,9 +2,9 @@ import React from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 
-import './player.scss';
+import './guess-player.scss';
 
-const Player = (props) => {
+const GuessPlayer = (props) => {
     const { src, birdName, audioSource } = props;
     return (
         <div className="guess">
@@ -23,14 +23,11 @@ const Player = (props) => {
                     showJumpControls={false}
                     showLoopControl={false}
                     showDownloadProgress={true}
-                    // progressUpdateInterval={20}
-                    // listenInterval={500}
-                    onPlay={function(){console.log('onPlay: ', this)}}
-                    
+                    onPlay={function(){console.log('onPlay: ', this)}}                    
                 />
             </div>
         </div>
     );
 }
 
-export default Player;
+export default GuessPlayer;
