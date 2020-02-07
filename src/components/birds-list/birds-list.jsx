@@ -2,7 +2,6 @@ import React from 'react';
 
 import './birds-list.scss';
 
-import BirdsItem from '../bird-item';
 import BirdItem from '../bird-item';
 
 const items = [

@@ -4,7 +4,7 @@ import './bird-item.scss';
 
 const BirdItem = ({ name }) => (
     <li className="bird-item">
-        {name}
+        <span>{name}</span>
     </li>
 );
 
