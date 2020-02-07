@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../header';
 import GuessPlayer from '../guess-player';
 import BirdsList from '../birds-list';
+import Row from '../row';
+import BirdDetails from '../bird-details';
 
 import './app.scss';
 
@@ -13,7 +15,9 @@ const App = () => (
             src={'./placeholder.jpg'} 
             birdName={'Соловей'}
             audioSource={'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'} />
-        <BirdsList />
+        <Row
+            left={<BirdsList />}
+            right={<BirdDetails />} />        
     </div>
 );
 
