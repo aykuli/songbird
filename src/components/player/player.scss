@@ -62,6 +62,32 @@
     }
 }
 
-.rhap_container {
-    background-color: transparent;
+.rhap_controls-section, .rhap_volume-indicator {
+    & button {
+        & svg {
+            &:hover path {
+                fill: #38B44A;
+                opacity: 1;
+            }
+
+            & path {
+            fill: #5f9f41;   
+            }         
+        }
+    }
+}
+
+.rhap_button-clear:hover {
+    opacity: 1;
+}
+
+.rhap_progress-indicator,
+.rhap_volume-indicator {
+    background-color: #5f9f41;
+    opacity: 1;
+
+    &:hover {
+        background-color: #38B44A;
+        opacity: 1;
+    }
 }

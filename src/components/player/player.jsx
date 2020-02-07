@@ -2,8 +2,6 @@ import React from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 
-import ReactAudioPlayer from 'react-audio-player';
-
 import './player.scss';
 
 const Player = (props) => {
@@ -23,35 +21,13 @@ const Player = (props) => {
                 <AudioPlayer
                     src={audioSource}
                     showJumpControls={false}
-                    showSkipControls={false}
                     showLoopControl={false}
-                    // other props here
+                    showDownloadProgress={true}
+                    // progressUpdateInterval={20}
+                    // listenInterval={500}
+                    onPlay={function(){console.log('onPlay: ', this)}}
+                    
                 />
-
-                <ReactAudioPlayer
-                src={audioSource}
-                controls
-                />
-                {/* <div id="player"> 
-                    <audio id="audio" src={audioSource} />
-                    
-                    <button id="playpause-guess">
-                        <div className="play-btn"></div>
-                    </button>
-                    
-                    <div id="progressbar-guess"></div>
-                    
-                    <div id="volume-guess"></div>
-                </div>
-                <figure>
-                    <figcaption className="hidden"></figcaption>
-                    <audio
-                        controls
-                        src={audioSource}
-                        className="guess__audio">
-                            Your browser does not support the audio lement.
-                    </audio>
-                </figure> */}
             </div>
         </div>
     );
