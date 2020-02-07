@@ -18,7 +18,7 @@ const App = () => (
         <Row
             left={<BirdsList />}
             right={<BirdDetails isRight={true}/>} />
-        <NextLevel isToNext={false} />    
+        <NextLevel isToNext={true} />    
     </div>
 );
 
