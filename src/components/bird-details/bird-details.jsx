@@ -4,7 +4,7 @@ import './bird-details.scss';
 
 const BirdDetails = () => {
     return (
-        <div className="bird-details">
+        <div className="row__child bird-details">
             BirdDetail
         </div>
     )
