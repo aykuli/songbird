@@ -3,9 +3,11 @@ import React from 'react';
 import './next-level.scss';
 
 const NextLevel = (props) => {
-    const { isToNext } = props;
+    const { isToNext, nextLevel } = props;
     return (
-        <button className={`next-level ${isToNext ? 'next-level__active' : ''}`}>
+        <button 
+            className={`next-level ${isToNext ? 'next-level__active' : ''}`}
+            onClick={nextLevel}>
             Следующий уровень
         </button>
     );
