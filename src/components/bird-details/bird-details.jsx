@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 
@@ -14,6 +14,16 @@ const Arrow = () => (
 )
 
 const Card = ({ title, latinName, desc, audioSource }) => {
+    const [url, setUrl] = useState('/');
+
+    useEffect(() => {
+        console.log('useEffect')
+        let canceled = false;
+        if (!canceled) setUrl(audioSource);
+        return () => canceled=true;
+
+    }, [audioSource]);
+
     return (
         <>
             <img 
@@ -24,7 +34,7 @@ const Card = ({ title, latinName, desc, audioSource }) => {
                 <h3 className="bird-details__title">{title}</h3>
                 <p className="bird-details__latin-name">{latinName}</p>
                 <AudioPlayer
-                    src={audioSource}
+                    src={url}
                     showJumpControls={false}
                     showLoopControl={false}
                     showDownloadProgress={true}                  
@@ -35,22 +45,16 @@ const Card = ({ title, latinName, desc, audioSource }) => {
     )
 }
 
-const BirdDetails = ({ isChosen, details }) => {
-    // if (details) {
-    //     const { name, species, description, audioUrl} = details;
-    // }
-
-    return (
-        <div className="row__child bird-details">
-            {!(isChosen && details)
-                ? <Arrow />
-                : <Card 
-                    title={details.name} 
-                    latinName={details.species}
-                    desc={details.description}
-                    audioSource={details.audioUrl}/> }
-        </div>
-    );
-}
+const BirdDetails = ({ isChosen, details }) => (
+    <div className="row__child bird-details">
+        {!(isChosen && details)
+            ? <Arrow />
+            : <Card 
+                title={details.name} 
+                latinName={details.species}
+                desc={details.description}
+                audioSource={details.audioUrl}/> }
+    </div>
+);
 
 export default BirdDetails;

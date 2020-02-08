@@ -23,8 +23,6 @@ function App ({ data }) {
     const [indexRight, setIndexRight] = useState(null);
     const [isRight, setIsRight] = useState(false);
     const [isRoundEnd, setIsRoundEnd] = useState(false);
-
-    const [category, setCategory] = useState('');
     const [categoryIndex, setCategoryIndex] = useState(0);
 
 
@@ -34,18 +32,21 @@ function App ({ data }) {
         console.log('************************************************************');
         console.log('верная птица ', data[categoryIndex][random].name);
         console.log('');
-    }, [category]);
+    }, [categoryIndex]);
 
     const onGetAnswer = ({ target }) => {
+        // вне зависимости от того ,куда кликнули, надо вытащить азвание птицы
         const answer = target.tagName === 'LI' ? target.children[1].innerText : target.innerText;
+        console.log('indexRight: ', indexRight)
         const rightAnswer = data[categoryIndex][indexRight].name;
-        
         setCurrentIndex(target.dataset.count);
 
         if (answer === rightAnswer) {
             // правильный ответ выбрать, один кон закончен
             setIsRight(true);
             setIsRoundEnd(true);
+            setScore(5 - wrongIndexes.size);
+            // setScore(5 - )
         } else if (!isRoundEnd) {       
             // если кон не закончен, то продолжаем отмечать оишбочные варианты     
             setWrongIndexes(prevSet => prevSet.has(target.dataset.count) 
@@ -53,6 +54,18 @@ function App ({ data }) {
                     : new Set([...Array.from(prevSet), target.dataset.count])
             );
         }
+    }
+    
+    const nextLevel = () => {
+        if (isRoundEnd) {
+            console.log('next clicked');
+            setCategoryIndex(prev => prev + 1);
+            setCurrentIndex(null);
+            setWrongIndexes(new Set());
+            setIndexRight(null);
+            setIsRight(false);
+            setIsRoundEnd(false);
+        }                  
     }
 
     return (
@@ -73,7 +86,12 @@ function App ({ data }) {
                 right={<BirdDetails 
                         isChosen={currentIndex}
                         details={currentIndex ? data[categoryIndex][currentIndex] : null}/>} />   
-            <NextLevel isToNext={false} />
+            <NextLevel 
+                isToNext={isRoundEnd}
+                nextLevel={nextLevel} />
+                {console.log('currentIndex: ', currentIndex)}
+                {console.log('categoryIndex: ', categoryIndex)}
+                {console.log('isRight: ', isRight)}
         </div>
     );
 }
