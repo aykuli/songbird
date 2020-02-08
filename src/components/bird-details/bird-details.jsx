@@ -35,18 +35,22 @@ const Card = ({ title, latinName, desc, audioSource }) => {
     )
 }
 
-const BirdDetails = ({ isRight }) => {
+const BirdDetails = ({ isChosen, details }) => {
+    // if (details) {
+    //     const { name, species, description, audioUrl} = details;
+    // }
+
     return (
         <div className="row__child bird-details">
-            {!isRight 
+            {!(isChosen && details)
                 ? <Arrow />
                 : <Card 
-                    title={'Ворона'} 
-                    latinName={"Corvus Corax"}
-                    desc={'Oчень гадкая птица однако, громкая и вредная, умеeт копать землю и добывать посаженные в землю семена, предварительно понаблюдав за огородниками.'}
-                    audioSource={'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'}/> }
+                    title={details.name} 
+                    latinName={details.species}
+                    desc={details.description}
+                    audioSource={details.audioUrl}/> }
         </div>
-    )
+    );
 }
 
 export default BirdDetails;
