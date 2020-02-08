@@ -19,7 +19,6 @@ function App ({ data }) {
     const [score, setScore] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(null);
 
-    const [indexWrong, setIndexWrong] = useState(null);
     const [wrongIndexes, setWrongIndexes] = useState(new Set());
     const [indexRight, setIndexRight] = useState(null);
     const [isRight, setIsRight] = useState(false);
@@ -71,7 +70,9 @@ function App ({ data }) {
                         onGetAnswer={onGetAnswer}
                         indexRight={isRight ? indexRight : null}
                         wrongIndexes={wrongIndexes} />}
-                right={<BirdDetails isRight={false}/>} />   
+                right={<BirdDetails 
+                        isChosen={currentIndex}
+                        details={currentIndex ? data[categoryIndex][currentIndex] : null}/>} />   
             <NextLevel isToNext={false} />
         </div>
     );
