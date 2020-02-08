@@ -17,10 +17,11 @@ const categories = ['Воробьиные', 'Певчие', 'Домашние', 
 
 function App ({ data }) {
     const [score, setScore] = useState(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(null);
 
-    const [indexWrong, setIndexWrong] = useState(0);
-    const [indexRight, setIndexRight] = useState(0);
+    const [indexWrong, setIndexWrong] = useState(null);
+    const [wrongIndexes, setWrongIndexes] = useState(new Set());
+    const [indexRight, setIndexRight] = useState(null);
     const [isRight, setIsRight] = useState(false);
     const [isWrong, setIsWrong] = useState(false);
 
@@ -30,22 +31,29 @@ function App ({ data }) {
 
     useEffect(() => {
         const random = Math.floor(Math.random() * 6);
-        setIndexRight(() => random);
-        console.log(data[categoryIndex][random])
+        setIndexRight(random);
+        console.log('************************************************************');
+        console.log('верная птица ', data[categoryIndex][random].name);
+        console.log('');
     }, [category]);
 
     const onGetAnswer = ({ target }) => {
-        console.log('click happened')
+        console.log('click happened');
         const answer = target.tagName === 'LI' ? target.children[1].innerText : target.innerText;
         const rightAnswer = data[categoryIndex][indexRight].name;
-        console.log(target.dataset.count)
+        console.log('вы клинули по ', answer);
+        
+        setCurrentIndex(target.dataset.count);
 
         if (answer === rightAnswer) {
             setIsRight(true);
         } else {
+            setWrongIndexes(prevSet => prevSet.has(target.dataset.count) 
+                    ? prevSet 
+                    : new Set([...Array.from(prevSet), target.dataset.count])
+            );
             setIsWrong(true);
         }
-        setCurrentIndex(target.dataset.count);
     }
 
     return (
@@ -53,18 +61,21 @@ function App ({ data }) {
             <Header score={score}/>
             <GuessPlayer 
                 birdName={isRight ? data[categoryIndex][indexRight].name : '***'}
-                audioSource={data[categoryIndex][indexRight].audioUrl} />
+                audioSource={indexRight ? data[categoryIndex][indexRight].audioUrl : data[categoryIndex][0].audioUrl} />
                 <CategoryList 
                     categories={categories}
-                    currentCategory={data[categoryIndex][indexRight].category}/>
+                    currentCategory={indexRight ? data[categoryIndex][indexRight].category : data[categoryIndex][0].category}/>
             <Row
                 left={<BirdsList 
                         items={data[categoryIndex]}                        
                         onGetAnswer={onGetAnswer}
-                        indexRight={isRight ? currentIndex : null }
-                        indexWrong={isWrong ? currentIndex : null } />}
+                        indexRight={isRight ? indexRight : null}
+                        wrongIndexes={wrongIndexes} />}
                 right={<BirdDetails isRight={false}/>} />   
-            <NextLevel isToNext={false} />    
+            <NextLevel isToNext={false} />  
+                    {console.log('после отрисовки дома currentIndex ',currentIndex)}
+                    {console.log('после отрисовки дома wrongIndexes ',wrongIndexes)}
+                    {console.log('после отрисовки дома indexRight ',indexRight)}
         </div>
     );
 }
