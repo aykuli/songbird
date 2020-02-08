@@ -23,7 +23,7 @@ function App ({ data }) {
     const [wrongIndexes, setWrongIndexes] = useState(new Set());
     const [indexRight, setIndexRight] = useState(null);
     const [isRight, setIsRight] = useState(false);
-    const [isWrong, setIsWrong] = useState(false);
+    const [isRoundEnd, setIsRoundEnd] = useState(false);
 
     const [category, setCategory] = useState('');
     const [categoryIndex, setCategoryIndex] = useState(0);
@@ -38,21 +38,21 @@ function App ({ data }) {
     }, [category]);
 
     const onGetAnswer = ({ target }) => {
-        console.log('click happened');
         const answer = target.tagName === 'LI' ? target.children[1].innerText : target.innerText;
         const rightAnswer = data[categoryIndex][indexRight].name;
-        console.log('вы клинули по ', answer);
         
         setCurrentIndex(target.dataset.count);
 
         if (answer === rightAnswer) {
+            // правильный ответ выбрать, один кон закончен
             setIsRight(true);
-        } else {
+            setIsRoundEnd(true);
+        } else if (!isRoundEnd) {       
+            // если кон не закончен, то продолжаем отмечать оишбочные варианты     
             setWrongIndexes(prevSet => prevSet.has(target.dataset.count) 
                     ? prevSet 
                     : new Set([...Array.from(prevSet), target.dataset.count])
             );
-            setIsWrong(true);
         }
     }
 
@@ -72,10 +72,7 @@ function App ({ data }) {
                         indexRight={isRight ? indexRight : null}
                         wrongIndexes={wrongIndexes} />}
                 right={<BirdDetails isRight={false}/>} />   
-            <NextLevel isToNext={false} />  
-                    {console.log('после отрисовки дома currentIndex ',currentIndex)}
-                    {console.log('после отрисовки дома wrongIndexes ',wrongIndexes)}
-                    {console.log('после отрисовки дома indexRight ',indexRight)}
+            <NextLevel isToNext={false} />
         </div>
     );
 }
