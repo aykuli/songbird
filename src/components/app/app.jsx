@@ -30,6 +30,19 @@ function App ({ data }) {
     }, [category]);
     console.log(indexRight);
     console.log(data[categoryIndex][indexRight]);
+
+    const onGetAnswer = ({ target: { children }}) => {
+        const answer = children[1].innerText;
+        const rightAnswer = data[categoryIndex][indexRight].name;
+
+        if (answer === rightAnswer) {
+            console.log('правильно!');
+            setIsRight(true);
+            console.log('isRight: ', isRight);
+        }
+        
+        console.log('isRight: ', isRight); 
+    }
     
 
     return (
@@ -42,7 +55,10 @@ function App ({ data }) {
                     categories={categories}
                     currentCategory={data[categoryIndex][indexRight].category}/>
             <Row
-                left={<BirdsList items={data[categoryIndex]} />}
+                left={<BirdsList 
+                        items={data[categoryIndex]} 
+                        onGetAnswer={onGetAnswer}
+                        isRight={isRight} />}
                 right={<BirdDetails isRight={false}/>} />
             <NextLevel isToNext={false} />    
         </div>
