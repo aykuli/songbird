@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from '../header';
 import GuessPlayer from '../guess-player';
@@ -6,20 +6,46 @@ import BirdsList from '../birds-list';
 import Row from '../row';
 import BirdDetails from '../bird-details';
 import NextLevel from '../next-level';
+import CategoryList from '../category-list';
 
 import './app.scss';
 
-const App = () => (
-    <div className="container">
-        <Header score={15}/>
-        <GuessPlayer 
-            birdName={'Соловей'}
-            audioSource={'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'} />
-        <Row
-            left={<BirdsList />}
-            right={<BirdDetails isRight={true}/>} />
-        <NextLevel isToNext={true} />    
-    </div>
-);
+const items = [
+    'Ворон', 'Гусь', 'Голубь', 'Воробей', 'Синица', 'Канарейка'
+];
+const categories = ['Воробьиные', 'Певчие', 'Домашние', 'Лесные', 'Морские', 'Перелетные'];
 
+function App ({ data }) {
+    const [indexRight, setIndexRight] = useState(0);
+    const [score, setScore] = useState(0);
+    const [category, setCategory] = useState('');
+    const [categoryIndex, setCategoryIndex] = useState(0);
+    const [isRight, setIsRight] = useState(false);
+
+
+    useEffect(() => {
+        const random = Math.floor(Math.random() * 6);
+        console.log(random)
+        setIndexRight(() => random);       
+    }, [category]);
+    console.log(indexRight);
+    console.log(data[categoryIndex][indexRight]);
+    
+
+    return (
+        <div className="container">
+            <Header score={score}/>
+            <GuessPlayer 
+                birdName={isRight ? data[categoryIndex][indexRight].name : '***'}
+                audioSource={data[categoryIndex][indexRight].audioUrl} />
+                <CategoryList 
+                    categories={categories}
+                    currentCategory={data[categoryIndex][indexRight].category}/>
+            <Row
+                left={<BirdsList items={data[categoryIndex]} />}
+                right={<BirdDetails isRight={false}/>} />
+            <NextLevel isToNext={false} />    
+        </div>
+    );
+}
 export default App;

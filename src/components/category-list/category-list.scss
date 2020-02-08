@@ -1,0 +1,37 @@
+.category {
+    flex-grow: 1;
+    padding: 0 10px;
+
+    text-align: center;
+
+    border-right: 1px solid #5f9f41;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    &--active {
+        background-color: #5f9f41;
+    }
+    
+    &__title {
+        color: #E95420;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 0;
+
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 45px;
+
+        background-color: #E95420;
+        border-radius:5px;
+        list-style: none;
+    }
+}

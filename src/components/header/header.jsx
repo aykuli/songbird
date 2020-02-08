@@ -9,10 +9,10 @@ const Header = (props) => {
             <div className="header__brand">
                 <div className="header__icon"></div>
                 <h1 className="header__title">SongBird </h1>
-                <p className="header__slogan">guess the bird challenge!</p>
+                <p className="header__slogan">Игра "Угадай птичку!"</p>
             </div>
             <div className="header__score">
-                <span>Score: {score}</span>
+                <span>{score} баллов</span>
             </div>
         </nav>
     );
