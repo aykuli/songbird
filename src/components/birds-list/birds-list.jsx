@@ -4,11 +4,7 @@ import './birds-list.scss';
 
 import BirdItem from '../bird-item';
 
-const items = [
-    'Ворон', 'Гусь', 'Голубь', 'Воробей', 'Синица', 'Канарейка'
-];
-
-const BirdsList = () => (
+const BirdsList = ({ items }) => (
     <ul className="row__child birds-list">
         {
             items.map((item, i) => {
@@ -16,7 +12,7 @@ const BirdsList = () => (
                 let isWrong = false;
                 if (i === 2) isRight = true;
                 if (i === 4) isWrong = true;
-                return <BirdItem key={i} name={item} isRight={isRight} isWrong={isWrong} />;
+                return <BirdItem key={i} name={item.name} isRight={isRight} isWrong={isWrong} />;
             })
         }
     </ul>
