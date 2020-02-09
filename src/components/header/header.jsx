@@ -4,6 +4,12 @@ import './header.scss';
 
 const Header = (props) => {
     const { score } = props;
+    const words = ['баллов', 'балла', 'балл'];
+    const word = score >= 5 
+        ? words[0]
+        : score === 1 
+        ? words[2]
+        : words[1];
     return (
         <nav className="header">
             <div className="header__brand">
@@ -12,7 +18,7 @@ const Header = (props) => {
                 <p className="header__slogan">Игра "Угадай птичку!"</p>
             </div>
             <div className="header__score">
-                <span>{score} баллов</span>
+                <span>{score} {word}</span>
             </div>
         </nav>
     );
