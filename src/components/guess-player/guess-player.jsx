@@ -5,7 +5,7 @@ import 'react-h5-audio-player/src/styles.scss';
 import './guess-player.scss';
 
 const GuessPlayer = (props) => {
-    const { src, birdName, audioSource } = props;
+    const { src, birdName, audioSrc } = props;
     return (
         <div className="guess">
             <img
@@ -19,7 +19,7 @@ const GuessPlayer = (props) => {
                     {birdName}
                 </h3>
                 <AudioPlayer
-                    src={audioSource}
+                    src={audioSrc}
                     showJumpControls={false}
                     showLoopControl={false}
                     showDownloadProgress={true}                  

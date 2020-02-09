@@ -13,9 +13,10 @@ import './app.scss';
 const items = [
     'Ворон', 'Гусь', 'Голубь', 'Воробей', 'Синица', 'Канарейка'
 ];
-const categories = ['Воробьиные', 'Певчие', 'Домашние', 'Лесные', 'Морские', 'Перелетные'];
+const categories = ['Воробьиные', 'Домашние', 'Лесные', 'Певчие', 'Морские', 'Перелетные'];
 
 function App ({ data }) {
+    console.log('\n\n---------------------   app going on   --------------------------');
     const [score, setScore] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(null);
 
@@ -68,15 +69,23 @@ function App ({ data }) {
         }                  
     }
 
+    const getImg = (imgTag) => require(`../../dataBase/imgs/${imgTag}.jpg`);    
+
     return (
         <div className="container">
             <Header score={score}/>
             <GuessPlayer 
                 birdName={isRight ? data[categoryIndex][indexRight].name : '***'}
-                audioSource={indexRight ? data[categoryIndex][indexRight].audioUrl : data[categoryIndex][0].audioUrl} />
-                <CategoryList 
-                    categories={categories}
-                    currentCategory={indexRight ? data[categoryIndex][indexRight].category : data[categoryIndex][0].category}/>
+                audioSrc={indexRight 
+                                ? data[categoryIndex][indexRight].audioUrl 
+                                : data[categoryIndex][0].audioUrl}
+                src={isRight ? getImg(data[categoryIndex][indexRight].imgTag).default : null} 
+                />
+            <CategoryList 
+                categories={categories}
+                currentCategory={indexRight 
+                                    ? data[categoryIndex][indexRight].category 
+                                    : data[categoryIndex][0].category}/>
             <Row
                 left={<BirdsList 
                         items={data[categoryIndex]}                        
@@ -85,7 +94,8 @@ function App ({ data }) {
                         wrongIndexes={wrongIndexes} />}
                 right={<BirdDetails 
                         isChosen={currentIndex}
-                        details={currentIndex ? data[categoryIndex][currentIndex] : null}/>} />   
+                        details={currentIndex ? data[categoryIndex][currentIndex] : null}
+                        imgSrc={currentIndex ? getImg(data[categoryIndex][currentIndex].imgTag).default : null} />} />   
             <NextLevel 
                 isToNext={isRoundEnd}
                 nextLevel={nextLevel} />
