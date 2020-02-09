@@ -49,6 +49,10 @@ function App ({ data }) {
             setIsRight(true);
             setIsRoundEnd(true);
             setScore(prev => prev + 5 - wrongIndexes.size);
+
+            if (categoryIndex === categories.length - 1) {
+                setIsGameOver(true);
+            }
         } else if (!isRoundEnd) {       
             // если кон не закончен, то продолжаем отмечать оишбочные варианты     
             setWrongIndexes(prevSet => prevSet.has(target.dataset.count) 
@@ -61,17 +65,27 @@ function App ({ data }) {
     const nextLevel = () => {
         if (isRoundEnd) {
             console.log('next clicked');
-            if (categoryIndex === categories.length - 1) {
-                setIsGameOver(true);
-            } else {
-                setCategoryIndex(prev => prev + 1);
-                setCurrentIndex(null);
-                setWrongIndexes(new Set());
-                setIndexRight(null);
-                setIsRight(false);
-                setIsRoundEnd(false);
-            }
+            
+            setCategoryIndex(prev => prev + 1);
+
+            clearStates();
         }                  
+    }
+    const clearStates = () => {
+        setCurrentIndex(null);
+        setWrongIndexes(new Set());
+        setIndexRight(null);
+        setIsRight(false);
+        setIsRoundEnd(false);
+    }
+
+    const handleGameStart = () => {
+        console.log('new game');
+        setIsGameOver(false);
+        setCategoryIndex(0);
+        setScore(0);
+
+        clearStates();
     }
 
     const getImg = (imgTag) => require(`../../dataBase/imgs/${imgTag}.jpg`);    
@@ -79,8 +93,10 @@ function App ({ data }) {
     return (
         <div className="container">
             <Header score={score}/>
-            {setIsGameOver 
-                ? <GameOver /> 
+            {true 
+                ? <GameOver 
+                    score={score}
+                    handleGameStart={handleGameStart}/> 
                 : (
                     <>
                         <GuessPlayer 
@@ -108,6 +124,7 @@ function App ({ data }) {
                         <NextLevel 
                             isToNext={isRoundEnd}
                             nextLevel={nextLevel} />
+                            {console.log('categoryIndex: ', categoryIndex)}
                 </>
                 )
             }
