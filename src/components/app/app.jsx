@@ -8,6 +8,7 @@ import BirdDetails from '../bird-details';
 import NextLevel from '../next-level';
 import CategoryList from '../category-list';
 import GameOver from '../game-over';
+import WinnerPage from '../winner-page';
 
 import './app.scss';
 
@@ -22,6 +23,7 @@ function App ({ data }) {
     const [isRight, setIsRight] = useState(false);
     const [isRoundEnd, setIsRoundEnd] = useState(false);
     const [isGameOver, setIsGameOver] = useState(false);
+    const [isWinner, setIsWinner] = useState(false);
 
     const getCategories = () => data.map(item => item[0].category);
 
@@ -93,7 +95,9 @@ function App ({ data }) {
     return (
         <div className="container">
             <Header score={score}/>
-            {true 
+            <WinnerPage />
+            
+            {/* {isGameOver 
                 ? <GameOver 
                     score={score}
                     handleGameStart={handleGameStart}/> 
@@ -127,7 +131,7 @@ function App ({ data }) {
                             {console.log('categoryIndex: ', categoryIndex)}
                 </>
                 )
-            }
+            } */}
         </div>
     );
 }
