@@ -13,22 +13,21 @@ const Arrow = () => (
     </div>
 )
 
-const Card = ({ title, latinName, desc, audioSource }) => {
+const Card = ({ title, latinName, desc, audioSrc, imgSrc }) => {
     const [url, setUrl] = useState('/');
 
     useEffect(() => {
-        console.log('useEffect')
         let canceled = false;
-        if (!canceled) setUrl(audioSource);
+        if (!canceled) setUrl(audioSrc);
         return () => canceled=true;
 
-    }, [audioSource]);
+    }, [audioSrc]);
 
     return (
         <>
             <img 
                 className="bird-details__img"
-                src="https://placeimg.com/200/200/nature/grayscale"
+                src={imgSrc}
                 alt="bird" />
             <div className="bird-details__info">
                 <h3 className="bird-details__title">{title}</h3>
@@ -45,7 +44,7 @@ const Card = ({ title, latinName, desc, audioSource }) => {
     )
 }
 
-const BirdDetails = ({ isChosen, details }) => (
+const BirdDetails = ({ isChosen, details, imgSrc }) => (
     <div className="row__child bird-details">
         {!(isChosen && details)
             ? <Arrow />
@@ -53,7 +52,8 @@ const BirdDetails = ({ isChosen, details }) => (
                 title={details.name} 
                 latinName={details.species}
                 desc={details.description}
-                audioSource={details.audioUrl}/> }
+                audioSrc={details.audioUrl}
+                imgSrc={imgSrc}/> }
     </div>
 );
 
