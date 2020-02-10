@@ -2,7 +2,7 @@
     width: 70px;
     height: 70px;
 
-    background-image: url(./arrow.png);
+    background-image: url(imgs/arrow.png);
     background-position: 0 0;
     background-repeat: no-repeat;
 
@@ -47,7 +47,7 @@
         height: 200px;
         margin-bottom: 20px;
 
-        background-image: url('./placeholder.jpg');
+        background-image: url(imgs/placeholder.jpg);
         border-radius: 5px;
     }
 
@@ -74,7 +74,8 @@
 
     &__latin-name {
         margin: 0;
-        margin-bottom: 20px;        padding: 5px;
+        margin-bottom: 20px;        
+        padding: 5px;
         
         border-bottom: 1px solid #5f9f41;
     }

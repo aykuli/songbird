@@ -1,5 +1,8 @@
 .winner-page {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
 
     text-align: center;
@@ -21,6 +24,48 @@
         line-height: 35px;
         font-weight: 300;
     }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    &__label {
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 300;
+    }
+
+    &__input {
+        &--txt {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            line-height: 35px;
+            font-weight: 400;
+            color: #fff;
+
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #5f9f41;
+
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            &::placeholder {
+                font-family: 'Oswald', sans-serif;
+                font-size: 20px;
+                line-height: 35px;
+                font-weight: 400;
+                color: #ddd;
+            }
+
+            &:focus {
+                box-shadow: 5px 1px 5px solid #fff;
+                outline: none;
+            }
+        }
+    }
     
     &__btn {
         margin: 40px 0 60px;
@@ -38,7 +83,6 @@
 
         &:hover, &:focus {
             background-color: #38B44A;
-            box-shadow: 1px 1px 10px #38B44A;
         }
     }
 }
@@ -70,4 +114,17 @@
             line-height: 40px;
         }
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);  
+  &:focus {
+    -webkit-box-shadow: 0px 1px 1px #38B44A;
+    box-shadow: 0 0 0px 1000px transparent inset;
+  }
 }

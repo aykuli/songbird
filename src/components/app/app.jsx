@@ -95,9 +95,9 @@ function App ({ data }) {
     return (
         <div className="container">
             <Header score={score}/>
-            <WinnerPage />
+            {/* <WinnerPage /> */}
             
-            {/* {isGameOver 
+            {isGameOver 
                 ? <GameOver 
                     score={score}
                     handleGameStart={handleGameStart}/> 
@@ -131,7 +131,7 @@ function App ({ data }) {
                             {console.log('categoryIndex: ', categoryIndex)}
                 </>
                 )
-            } */}
+            }
         </div>
     );
 }
