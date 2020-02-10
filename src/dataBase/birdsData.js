@@ -114,7 +114,7 @@ export default [[
             species: 'Streptopelia turtur',
             description: 'Пение горлицы описывают как негромкое воркование или ритмичное урчание, состоящее из звуков «турр-турр-турр». Такую песню горлица исполняет в кронах деревьев. «Пение» у самца чередуется с токовым полётом, во время которого он взлетает, хлопает крыльями, и на раскрытых крыльях планирует вниз.',
             imgTag: 'streptopelia-turtur',
-            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC521985-2020.01.21_10.58_01.mp3',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC512596-STRTUR_170618_3826_Essarts36_Brenne.mp3',
         }, {
             id: 2,
             category: 'Лесные',
@@ -252,17 +252,17 @@ export default [[
         {
             id: 0,
             category: 'Перелетные',
-            name: 'Зяблик',
-            species: 'Fringilla coelebs',
-            description: 'Пение збликов – это заливистые многоминутные рулады. Концерты устраивают самцы: они садятся на возвышенности, запрокидывают головку назад и начинают петь, отдаваясь моменту без остатка. Трели зябликов торжественные, радостные, раскатистые.',
-            imgTag: 'fringilla-coelebs',
-            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512402-zi%C4%99ba%20%282%29%20jak%20piecuszek.mp3',
+            name: 'Журавль',
+            species: 'Balearica regulorum',
+            description: 'Звуки, издаваемые журавлем, похожи на журчание горного ручья или звук музыкального инструмента. В разное время года птицы громко выкрикивают звонкое «кур-лы – кур-лы».',
+            imgTag: 'balearica-regulorum',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/WOPIRNCCSX/Grey%20Crowned%20Crane%20%28Ngorongoro%28crater%29-2011-11-13-13h16%29%20LS110624.mp3',
         }, {
             id: 1,
             category: 'Перелетные',
             name: 'Зяблик',
             species: 'Fringilla coelebs',
-            description: 'Пение збликов – это заливистые многоминутные рулады. Концерты устраивают самцы: они садятся на возвышенности, запрокидывают головку назад и начинают петь, отдаваясь моменту без остатка. Трели зябликов торжественные, радостные, раскатистые.',
+            description: 'Пение зябликов – это заливистые многоминутные рулады. Концерты устраивают самцы: они садятся на возвышенности, запрокидывают головку назад и начинают петь, отдаваясь моменту без остатка. Трели зябликов торжественные, радостные, раскатистые.',
             imgTag: 'fringilla-coelebs',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512402-zi%C4%99ba%20%282%29%20jak%20piecuszek.mp3',
         }, {

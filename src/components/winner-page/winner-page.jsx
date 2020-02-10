@@ -8,7 +8,7 @@ import './winner-page.scss';
 import pdfOptions from '../../dataBase/certificate';
 
 
-const WinnerPage = () => {
+const WinnerPage = ({ handleGameStart }) => {
     const [playerName, setPlayerName] = useState('');
 
     const handleChange = ({ target: { value}}) => setPlayerName(value);
@@ -30,7 +30,7 @@ const WinnerPage = () => {
                     className="winner-page__form"
                     onSubmit={handleSubmit}>
                     <label className="winner-page__label"
-                    htmlFor="sertificate-name">
+                        htmlFor="sertificate-name">
                         Введите ваше имя для сертификата:
                     </label>
                     <input 
@@ -39,8 +39,11 @@ const WinnerPage = () => {
                         placeholder="Петр Петров"
                         value={playerName}
                         onChange={handleChange} />
-                    <button className="winner-page__btn"    >Скачать сертификат</button>
+                    <button className="winner-page__btn">Скачать сертификат</button>
                 </form>
+                <button 
+                    className="winner-page__btn" 
+                    onClick={handleGameStart}>Хочу играть еще!</button>
             </div>
         </div>
     );
