@@ -2,8 +2,7 @@ import React from 'react';
 
 import './header.scss';
 
-const Header = (props) => {
-    const { score } = props;
+const Header = ({ score, maxScore }) => {
     return (
         <nav className="header">
             <div className="header__brand">
@@ -12,7 +11,7 @@ const Header = (props) => {
                 <p className="header__slogan">Игра "Угадай птичку!"</p>
             </div>
             <div className="header__score">
-                <span>Счет: {score}</span>
+                <span>Счет: {score} из {maxScore}</span>
             </div>
         </nav>
     );

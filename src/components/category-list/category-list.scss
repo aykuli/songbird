@@ -5,6 +5,7 @@
     text-align: center;
 
     border-right: 1px solid #5f9f41;
+    border-bottom: 1px solid #5f9f41;
 
     &:last-child {
         border-right: none;
@@ -15,6 +16,8 @@
     }
     
     &__title {
+        margin: 20px 10px;
+        padding: 0;
         color: #E95420;
     }
 
@@ -33,5 +36,13 @@
         background-color: #E95420;
         border-radius:5px;
         list-style: none;
+    }
+}
+
+@media(max-width: 1200px) {
+    .category {
+        &__list {
+            border-radius: 0;
+        }
     }
 }

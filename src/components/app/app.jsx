@@ -96,7 +96,7 @@ function App ({ data }) {
 
     return (
         <div className="container">
-            <Header score={score}/>
+            <Header score={score} maxScore={maxScore} />
             {console.log('isWinner: ', isWinner)}
             {isWinner 
                 ? <WinnerPage /> 

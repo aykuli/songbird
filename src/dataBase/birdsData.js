@@ -5,7 +5,6 @@ export default [[
         name: 'Сорока',
         species: 'Pica pica',
         description: 'Такая дикая птица, как сорока, может стать домашним питомцем. Эти пернатые быстро привыкают к человеку, адаптируются к окружающим условиям. Вскормленные человеком, взрослые сороки узнают хозяина в лицо, становятся ручными, кормятся из рук и не улетают от него надолго.',
-        imgUrl: '',
         imgTag: 'pica',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC520627-Pica pica_2020.01.12_12.31_01.mp3',
     }, {
@@ -14,7 +13,6 @@ export default [[
         name: 'Грач',
         species: 'Corvus frugilegus',
         description: 'В полете благодаря обтекаемым перьям, грач развивает скорость до 85 километров в час.\nМолодой грач внешне похож на черную ворону. Отличить грачонка от вороны можно по более тонкому и прямому клюву и удлиненным, торчащим в стороны перьям на ногах и боках.',
-        imgUrl: '',
         imgTag: 'frugilegus',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/LELYWQKUZX/XC492941-Corvus%20frugilegus%20190528_001%2CAA.MP3',
     }, {
@@ -23,7 +21,6 @@ export default [[
         name: 'Ворон',
         species: 'Corvus corax',
         description: 'Вороны – умные, осторожные птицы. Они умеют блестяще маневрировать в воздухе и ходить по земле.\nВороны ведут сложную социальную жизнь. Обучаются в течение всей жизни, легко приспосабливаются к изменениям в условиях окружающей среды.',
-        imgUrl: '',
         imgTag: 'corax',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3',
     }, {
@@ -32,7 +29,6 @@ export default [[
         name: 'Дрозд',
         species: 'Turdus philomelos',
         description: 'Дрозд — лучший певец из отряда воробьиных. Песня состоит только из красивых звучных свистов и коротких трелей. Часто ее слышно в утреннее и вечернее время. Поют в течении всего периода гнездования.',
-        imgUrl: '',
         imgTag: 'philomelos',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485904-Grive%20musicienne%20chant%202.mp3',
     }, {
@@ -41,7 +37,6 @@ export default [[
         name: 'Зяблик',
         species: 'Fringilla coelebs',
         description: 'Самцы щепетильно подходят к своему отцовству. Они оберегают жилище, оповещают, если рядом появился хищник. Кроме того, самцы помогают выкормить даже чужих птенцов.',
-        imgUrl: '',
         imgTag: 'coelebs',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC513035-FRICOE_170605_3108_NDDL44_Freneliere.mp3',
     }, {
@@ -50,7 +45,6 @@ export default [[
         name: 'Сойка',
         species: 'Garrulus glandarius',
         description: 'Самцы щепетильно подходят к своему отцовству. Они оберегают жилище, оповещают, если рядом появился хищник. Кроме того, самцы помогают выкормить даже чужих птенцов.',
-        imgUrl: '',
         imgTag: 'glandarius',
         audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/SNRCANJSRX/XC460049-Garrulus%20glandarius%20call%20V%C3%A4stersj%C3%B6n%20111014%20aNR.mp3',
     },
@@ -61,7 +55,6 @@ export default [[
             name: 'Утка',
             species: 'Anas platyrhynchos',
             description: 'Селезни не умеют крякать, а кряканье самочек уток не имеет эха. \nНоворожденные утята принимают за мать первое существо, которое увидят при появлении на свет.\nУтиные лапы отличаются отсутствием нервных окончаний, благодаря чему птицы могут ходить даже по льду и снегу.',
-            imgUrl: '',
             imgTag: 'platyrhynchos',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/LELYWQKUZX/XC234891-%20150403_002%2C3.04.2015%2C%20%D1%80.%20%D0%98%D0%BB%D0%B5%D1%82%D1%8C%2C%D0%A1.MP3',
         }, {
@@ -70,7 +63,6 @@ export default [[
             name: 'Цесарка',
             species: 'Numida meleagris',
             description: 'Цесарки довольно быстро привыкают к людям, которые за ними ухаживают, а при виде посторонних поднимают жуткий шум, и поэтому наравне с гусями являются хорошими сторожами.\nЦесарок можно приучить поедать колорадских жуков, добавляя вредителей птицам в пищу. Привыкнув к такому прикорму, цесарка сама начинает искать насекомых и может стать помощником в борьбе с ними.',
-            imgUrl: '',
             imgTag: 'meleagris',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/GQMCPIVNXX/XC507927-Helmeted%20Guineafowl.mp3',
         }, {
@@ -79,7 +71,6 @@ export default [[
             name: 'Петух',
             species: 'Gallus gallus domesticus',
             description: 'На одного петуха в стае должно приходиться от 8 до 12 курочек. Уже в 6 месяцев самки могут нести первые яйца, и эта способность сохраняется у них до 10 лет. В то время как петуха используют только 2-3 года.',
-            imgUrl: '',
             imgTag: 'gallus',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/QZIUOAQAMG/XC205483-para%20xeno%20canto.mp3',
         }, {
@@ -88,7 +79,6 @@ export default [[
             name: 'Курица',
             species: 'Gallus gallus domesticus',
             description: 'Пищевые яйца курицы могут нести и без петуха.',
-            imgUrl: '',
             imgTag: 'gallus-domesticus',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/QZIUOAQAMG/XC205483-para%20xeno%20canto.mp3',
         }, {
@@ -97,7 +87,6 @@ export default [[
             name: 'Перепел',
             species: 'Coturnix coturnix',
             description: 'Птица хороша тем, что не требует отдельного помещения – 50 перепелов легко размещаются в клетке на 1 м2 площади. При этом за день они могут снести около 50 яиц весом 10 г, что соответствует практически десятку куриных яиц.',
-            imgUrl: '',
             imgTag: 'coturnix',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/EJIITXAJNY/XC497282-Kwartel%20190720%20Wezelse%20heide.mp3',
         }, {
@@ -106,7 +95,6 @@ export default [[
             name: 'Страус',
             species: 'Struthio camelus',
             description: 'Птица хороша тем, что не требует отдельного помещения – 50 перепелов легко размещаются в клетке на 1 м2 площади. При этом за день они могут снести около 50 яиц весом 10 г, что соответствует практически десятку куриных яиц.',
-            imgUrl: '',
             imgTag: 'struthio-camelus',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/YTUXOCTUEM/XC516153-Struthio_camelus_australis-FL%20quiet%20calls%20imm%20Polokwane%20GameRes%2030Oct19%208.05am%20LS115271a.mp3',
         }
@@ -117,7 +105,6 @@ export default [[
             name: 'Дятел',
             species: 'Dendrocopos major',
             description: 'Дятлы используют как барабаны пустые консервные банки или куски железа, чтобы барабанная дробь звучала на далекие расстояния – таким способом они зовут к себе других дятлов.',
-            imgUrl: '',
             imgTag: 'dendrocopos-major',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC521985-2020.01.21_10.58_01.mp3',
         }, {
@@ -126,7 +113,6 @@ export default [[
             name: 'Горлица',
             species: 'Streptopelia turtur',
             description: 'Пение горлицы описывают как негромкое воркование или ритмичное урчание, состоящее из звуков «турр-турр-турр». Такую песню горлица исполняет в кронах деревьев. «Пение» у самца чередуется с токовым полётом, во время которого он взлетает, хлопает крыльями, и на раскрытых крыльях планирует вниз.',
-            imgUrl: '',
             imgTag: 'streptopelia-turtur',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC521985-2020.01.21_10.58_01.mp3',
         }, {
@@ -135,7 +121,6 @@ export default [[
             name: 'Козодой',
             species: 'Caprimulgus europaeus',
             description: 'Козодев можно часто увидеть неподалеку от пасущихся домашних животных. В таких местах птицы охотятся на мух, слепней и другие виды насекомых, которые сопровождают домашних животных. Козодои летают рядом и бегают по земле между животными, порой прямо среди их ног.',
-            imgUrl: '',
             imgTag: 'сaprimulgus-europaeus',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/RNMRWBXEZJ/XC488266-Nachtzwaluw%2C%20zang%2C%20170619%2C%202322%20uur.mp3',
         }, {
@@ -144,7 +129,6 @@ export default [[
             name: 'Тетерев',
             species: 'Lyrurus tetrix',
             description: 'В России и странах Скандинавии тетерев является одной из самых популярных промысловых охотничьих птиц.',
-            imgUrl: '',
             imgTag: 'lyrurus-tetrix',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/REICIMDLJD/XC475567-lek.mp3',
         }, {
@@ -153,7 +137,6 @@ export default [[
             name: 'Цапля серая',
             species: 'Ardea cinerea',
             description: 'Голос серой цапли звучит как грубый скрежещущий звук, который напоминает низкое короткое карканье. Такую позывку цапля обычно издает на лету. Она довольно громкая и слышна на больших расстояниях.',
-            imgUrl: '',
             imgTag: 'ardea-cinerea',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513743-190916_1256_Ar.cinerea-fligth.mp3',
         }, {
@@ -162,8 +145,91 @@ export default [[
             name: 'Удод',
             species: 'Upupa epops',
             description: 'Голос удода глухой, гортанный, состоит из трёх-пятисложных криков «уп-уп-уп» или «уд-уд-уд», которые повторяются несколько раз подряд. Название птицы является звукоподражанием этой песне. Удивленная или испуганная птица издаёт пронзительный вопль «чии-иир».',
-            imgUrl: '',
             imgTag: 'upupa-epops',
             audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/LNDCYHUSPR/XC522078-Abubilla-%20Upupa%20epops.mp3',
         }
+    ], [
+        {
+            id: 0,
+            category: 'Морские',
+            name: 'Пингвин',
+            species: 'Aptenodytes patagonicus',
+            description: 'За день охоты пингвин проплывает примерно 27 км, и проводит на глубине более 3 метров около 80 минут.',
+            imgTag: 'aptenodytes-patagonicus',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/PENMPUKONZ/XC396249-1211_King%20Penguin_19-11-2017_Macquarie.mp3',
+        }, {
+            id: 1,
+            category: 'Морские',
+            name: 'Пеликан',
+            species: 'Pelecanus onocrotalus',
+            description: 'Пеликаны в основном тихие и молчаливые птицы, и только во время гнездования издают характерный глухой рев.',
+            imgTag: 'pelecanus-onocrotalus',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/CDTGHVBGZP/XC278381-Great%20White%20Pelican2014-12-27-1t.mp3',
+        }, {
+            id: 2,
+            category: 'Морские',
+            name: 'Поморник',
+            species: 'Stercorarius parasiticus',
+            description: 'Все поморники обладают различными и очень интересными голосами, однако большую часть времени птицы предпочитают молчать, и поют только во время брачного периода во время полета.',
+            imgTag: 'stercorarius-parasiticus',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/YSDNMROVID/XC342925-377_stecus_kutsu2_Suomi_Kustavi_2012-07-08.mp3',
+        }, {
+            id: 3,
+            category: 'Морские',
+            name: 'Чайка',
+            species: 'Larus pacificus',
+            description: 'Чайки ведут колониальный образ жизни. В их крупных колониях постоянно слышны голоса птиц, которые напоминают то хохот, то квохтанье, то даже крики рассерженной кошки.',
+            imgTag: 'larus-pacificus',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/MXMFTGKZDR/XC383925-GMCLAC_6211-PGull.mp3',
+        }, {
+            id: 4,
+            category: 'Морские',
+            name: 'Фрегат',
+            species: 'Fregata andrewsi',
+            description: 'Перед брачным периодом на горле у самцов появляется большой кожистый мешок ярко-красного цвета. Чтобы привлечь самку самцы надувают его и издают характерные звуки.',
+            imgTag: 'fregata-andrewsi',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/YTUXOCTUEM/Fregata_andrewsi_ChristmasI-99b-FRL_AU_29_2239-2308_1_CU.mp3',
+        }, {
+            id: 5,
+            category: 'Морские',
+            name: 'Гагарка',
+            species: 'Alca torda',
+            description: 'Латинское название птицы Alca связывают с ее криком, который звучит, как «арк-арк».',
+            imgTag: 'alca-torda',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC487892-2018-07-19%20Reykholar%20-%20Brajanslaekur%20-%20Latrabajarg%20180719%20Pinguoin%20torda%20%283%29.mp3',
+        }
+    ], [
+        {
+            id: 0,
+            category: 'Певчие',
+            name: 'Жаворонок',
+            species: 'Eremopterix griseus',
+            description: 'Песня жаворонков наполнено многочисленным количеством разнообразных и захватывающих звуков. При этом каждый звук обладает отличительную черту, которая зависит от вида жаворонка, возраста, опыта, индивидуальных особенностей и места обитания.',
+            imgTag: 'eremopterix-griseus',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/YTUXOCTUEM/XC451740-Plocepasser_superciliosus-FL%20calls%20%20Buffalo%20Springs%2016Nov18%2011.07am%20LS112488a.mp3',
+        }, {
+            id: 1,
+            category: 'Певчие',
+            name: 'Иволга',
+            species: 'Oriolus szalayi',
+            description: 'Мелодичность голоса иволги сравнивают со звучанием флейты. Свист птицы обладает низким тембром. Мелодия состоит из 4 слогов: «фиу лиу ли».',
+            imgTag: 'oriolus-szalayi',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/EHGWCIGILC/XC502391-Oriole_Brown_M3AK-422_Marwes_23rdAug19.mp3',
+        }, {
+            id: 2,
+            category: 'Певчие',
+            name: 'Канарейка',
+            species: 'Serinus canaria',
+            description: 'Пение канарейки состоит из нескольких сложных мелодий: трель, свистание, поскрипывание, щебетание.',
+            imgTag: 'serinus-canaria',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/NOJNUVZEHB/XC460380-Chant%20Serin%20des%20Canaries%20002.mp3',
+        }, {
+            id: 3,
+            category: 'Певчие',
+            name: 'Свиристель',
+            species: 'Serinus canaria',
+            description: 'Пение канарейки состоит из нескольких сложных мелодий: трель, свистание, поскрипывание, щебетание.',
+            imgTag: 'serinus-canaria',
+            audioUrl: 'https://www.xeno-canto.org/sounds/uploaded/NOJNUVZEHB/XC460380-Chant%20Serin%20des%20Canaries%20002.mp3',
+        }, 
     ]]
