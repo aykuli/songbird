@@ -10,7 +10,7 @@ const GuessPlayer = (props) => {
         <div className="guess">
             <img
                 className="guess__img"
-                src={src}
+                src={src ? src : require('./imgs/placeholder.jpg').default}
                 alt="bird"
                 width="200"
                 height="200" />

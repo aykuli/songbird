@@ -7,8 +7,8 @@
     border-right: 1px solid #5f9f41;
     border-bottom: 1px solid #5f9f41;
 
-    &:last-child {
-        border-right: none;
+    &:first-child {
+        border-left: 1px solid #5f9f41;
     }
 
     &--active {
@@ -34,7 +34,6 @@
         line-height: 45px;
 
         background-color: #E95420;
-        border-radius:5px;
         list-style: none;
     }
 }
