@@ -2,7 +2,7 @@ import React from 'react';
 
 import './game-over.scss';
 
-const GameOver = ({ score, handleGameStart }) => {
+const GameOver = ({ score, maxScore, handleGameStart }) => {
     return (
         <div className="game-over">
             <div className="game-over__title--wrap">
@@ -14,7 +14,7 @@ const GameOver = ({ score, handleGameStart }) => {
                     className="game-over__title--decor" 
                     src={require("./imgs/confetti.png").default} />
             </div>
-            <p className="game-over__txt">Вы набрали <span className="game-over__score">{score}</span> из максимальных 30-ти.</p>
+            <p className="game-over__txt">Вы набрали <span className="game-over__score">{score}</span> из максимальных {maxScore}.</p>
             <button 
                 className="game-over__btn" 
                 onClick={handleGameStart}>Хочу играть еще!</button>

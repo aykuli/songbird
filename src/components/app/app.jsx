@@ -27,12 +27,11 @@ function App ({ data }) {
 
     const getCategories = () => data.map(item => item[0].category);
 
-    getCategories();
-
     const categories = getCategories();
-
+    const maxScore = categories.length * (data[0].length - 1);
+    
     useEffect(() => {
-        const random = Math.floor(Math.random() * 6);
+        const random = Math.floor(Math.random() * (categories.length + 1));
         setIndexRight(random);
         console.log('************************************************************');
         console.log('верная птица ', data[categoryIndex][random].name);
@@ -41,19 +40,23 @@ function App ({ data }) {
 
     const onGetAnswer = ({ target }) => {
         // вне зависимости от того ,куда кликнули, надо вытащить азвание птицы
-        const answer = target.tagName === 'LI' ? target.children[1].innerText : target.innerText;
-        
+        const answer = target.tagName === 'LI' ? target.children[1].innerText : target.innerText;        
         const rightAnswer = data[categoryIndex][indexRight].name;
-        setCurrentIndex(target.dataset.count);
-
+        
         if (answer === rightAnswer) {
-            // правильный ответ выбрать, один кон закончен
+            // правильный ответ выбран, один кон закончен
             setIsRight(true);
             setIsRoundEnd(true);
-            setScore(prev => prev + 5 - wrongIndexes.size);
-
+            setScore(score + 5 - wrongIndexes.size);
+            console.log(score)
             if (categoryIndex === categories.length - 1) {
-                setIsGameOver(true);
+                console.log(score)
+                if (+score === +maxScore - 5) {
+                    console.log('set winning')
+                    setIsWinner(true);
+                } else {
+                    setIsGameOver(true);
+                }
             }
         } else if (!isRoundEnd) {       
             // если кон не закончен, то продолжаем отмечать оишбочные варианты     
@@ -62,17 +65,18 @@ function App ({ data }) {
                     : new Set([...Array.from(prevSet), target.dataset.count])
             );
         }
+
+        console.log('isRight: ', isRight);
     }
     
     const nextLevel = () => {
-        if (isRoundEnd) {
-            console.log('next clicked');
-            
+        if (isRoundEnd) {            
             setCategoryIndex(prev => prev + 1);
 
             clearStates();
         }                  
     }
+
     const clearStates = () => {
         setCurrentIndex(null);
         setWrongIndexes(new Set());
@@ -82,11 +86,9 @@ function App ({ data }) {
     }
 
     const handleGameStart = () => {
-        console.log('new game');
         setIsGameOver(false);
         setCategoryIndex(0);
         setScore(0);
-
         clearStates();
     }
 
@@ -95,12 +97,14 @@ function App ({ data }) {
     return (
         <div className="container">
             <Header score={score}/>
-            {/* <WinnerPage /> */}
-            
-            {isGameOver 
+            {console.log('isWinner: ', isWinner)}
+            {isWinner 
+                ? <WinnerPage /> 
+                : isGameOver 
                 ? <GameOver 
                     score={score}
-                    handleGameStart={handleGameStart}/> 
+                    handleGameStart={handleGameStart}
+                    maxScore={maxScore} /> 
                 : (
                     <>
                         <GuessPlayer 
@@ -128,10 +132,10 @@ function App ({ data }) {
                         <NextLevel 
                             isToNext={isRoundEnd}
                             nextLevel={nextLevel} />
-                            {console.log('categoryIndex: ', categoryIndex)}
                 </>
                 )
             }
+            {console.log('currentIndex: ', currentIndex)}
         </div>
     );
 }
