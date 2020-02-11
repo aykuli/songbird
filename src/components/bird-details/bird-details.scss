@@ -58,6 +58,15 @@
         height: 20px;
         font-size: 20px;
     }
+
+    & .rhap_container {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    & .rhap_time {
+        color: #fff;
+    }
 }
 
 @media(max-width: 1200px) {
