@@ -17,6 +17,7 @@ const WinnerPage = ({ handleGameStart }) => {
         e.preventDefault();
         pdfMake.createPdf(docDefinition).download();
     }
+
     const date = new Date();
     const options = {month: 'long', day: 'numeric', year: 'numeric'};
     const docDefinition = pdfOptions(playerName, date, options);
