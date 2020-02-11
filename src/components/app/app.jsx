@@ -32,6 +32,9 @@ function App ({ data }) {
     useEffect(() => {
         const random = Math.floor(Math.random() * categories.length);
         setIndexRight(random);
+        console.log('************************************************************');
+        console.log('верная птица ', data[categoryIndex][random].name);
+        console.log('');
     }, [categoryIndex]);
 
     const onGetAnswer = ({ target }) => {
@@ -46,6 +49,12 @@ function App ({ data }) {
             setIsRoundEnd(true);
             setScore(score + data[0].length - 1 - wrongIndexes.size);
             
+            if (categoryIndex === categories.length - 1) {
+                if (+score === +maxScore - data[0].length + 1) {
+                    setIsWinner(true);
+                }
+                setIsGameOver(true);            
+            }
         } else if (!isRoundEnd) {
             // если кон не закончен, то продолжаем отмечать оишбочные варианты     
             setWrongIndexes(prevSet => prevSet.has(target.dataset.count) 
