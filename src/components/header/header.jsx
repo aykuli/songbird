@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './header.scss';
 
@@ -18,3 +19,13 @@ const Header = ({ score, maxScore }) => {
 }
 
 export default Header;
+
+Header.defaultProps = {
+    score: 0,
+    maxScore: 0,
+};
+
+Header.propTypes = {
+    score: PropTypes.number,
+    maxScore: PropTypes.number,
+};

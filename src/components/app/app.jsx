@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 import Header from '../header';
 import GuessPlayer from '../guess-player';
@@ -61,7 +62,7 @@ function App ({ data }) {
         }
     }
     
-    const nextLevel = () => {
+    const handleNextLevel = () => {
         if (isRoundEnd) {            
             setCategoryIndex(prev => prev + 1);
             clearStates();
@@ -122,15 +123,15 @@ function App ({ data }) {
                     left={<BirdsList 
                             items={data[categoryIndex]}                        
                             onGetAnswer={onGetAnswer}
-                            indexRight={isRight ? indexRight : null}
-                            wrongIndexes={wrongIndexes} />}
+                            indexRight={isRight ? +indexRight : null}
+                            wrongIndexes={Array.from(wrongIndexes)} />}
                     right={<BirdDetails 
                         isChosen={currentIndex}
                         details={indexRight ? data[categoryIndex][currentIndex] : null}
                         imgSrc={currentIndex ? getImg(data[categoryIndex][currentIndex].imgTag).default : null} />} />   
                 <NextLevel
                     isToNext={isRoundEnd}
-                    nextLevel={nextLevel} />
+                    handleNextLevel={handleNextLevel} />
             </>
         )
     }
@@ -145,3 +146,11 @@ function App ({ data }) {
     );
 }
 export default App;
+
+App.defaultProps = {
+    data: [[]],
+}
+
+App.propTypes = {
+    data: PropTypes.array.isRequired,
+}

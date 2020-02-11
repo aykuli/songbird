@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './game-over.scss';
 
@@ -23,3 +24,15 @@ const GameOver = ({ score, maxScore, handleGameStart }) => {
 };
 
 export default GameOver;
+
+GameOver.defaultProps = {
+    score: 0,
+    maxScore: 0,
+    handleGameStart: () => {},
+};
+
+GameOver.propTypes = {
+    score: PropTypes.number,
+    maxScore: PropTypes.number,
+    handleGameStart: PropTypes.func,
+};

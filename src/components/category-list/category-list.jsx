@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './category-list.scss';
 
@@ -23,3 +24,13 @@ const CategoryList = ({ categories, currentCategory }) => {
 }
 
 export default CategoryList;
+
+CategoryList.defaultProps = {
+    categories: [],
+    currentCategory: 0,
+};
+
+CategoryList.propTypes = {
+    categories: PropTypes.array,
+    currentCategory: PropTypes.string,
+};
