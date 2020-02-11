@@ -39,7 +39,16 @@
 
     &__audio {
         width: 100%;
-        background-color:transparent;
+        background-color: transparent;
+    }
+
+    & .rhap_container {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    & .rhap_time {
+        color: #fff;
     }
 }
 
