@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './bird-item.scss';
 
@@ -14,3 +15,17 @@ const BirdItem = ({ i, name, isRight, isWrong }) => {
 };
 
 export default BirdItem;
+
+BirdItem.defaultProps = {
+    i: 0,
+    name: '',
+    isRight: false,
+    isWrong: false,
+};
+
+BirdItem.propTypes = {
+    i: PropTypes.number,
+    name: PropTypes.string,
+    isRight: PropTypes.bool,
+    isWrong: PropTypes.bool,
+};

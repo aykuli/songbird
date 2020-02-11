@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -51,3 +52,11 @@ const WinnerPage = ({ handleGameStart }) => {
 };
 
 export default WinnerPage;
+
+WinnerPage.defaultProps = {
+    handleGameStart: () => {},
+};
+
+WinnerPage.propTypes = {
+    handleGameStart: PropTypes.func,
+};

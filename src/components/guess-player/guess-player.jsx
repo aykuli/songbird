@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 
 import './guess-player.scss';
 
-const GuessPlayer = (props) => {
-    const { src, birdName, audioSrc } = props;
+const GuessPlayer = ({ src, birdName, audioSrc }) => {
     return (
         <div className="guess">
             <img
@@ -30,3 +30,15 @@ const GuessPlayer = (props) => {
 }
 
 export default GuessPlayer;
+
+GuessPlayer.defaultProps = {
+    src: require('./imgs/placeholder.jpg').default,
+    birdName: '',
+    audioSrc: '',
+};
+
+GuessPlayer.propTypes = {
+    src: PropTypes.string,
+    birdName: PropTypes.string,
+    audioSrc: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 import Arrow from '../arrow';
@@ -27,7 +28,8 @@ const Card = ({ title, latinName, desc, audioSrc, imgSrc }) => {
     )
 }
 
-const BirdDetails = ({ isChosen, details, imgSrc }) => (
+const BirdDetails = ({ isChosen, details, imgSrc }) => {
+    return (
     (isChosen && details)
         ? <Card 
             title={details.name} 
@@ -36,6 +38,33 @@ const BirdDetails = ({ isChosen, details, imgSrc }) => (
             audioSrc={details.audioUrl}
             imgSrc={imgSrc}/>
         : <Arrow />
-);
+)
+    };
 
 export default BirdDetails;
+
+Card.defaultProps = {
+    title: '',
+    latinName: '',
+    desc: '',
+    audioSrc: '/',
+    imgSrc: require('./imgs/placeholder.jpg').default,
+};
+
+Card.propTypes = {
+    title: PropTypes.string,
+    latinName: PropTypes.string,
+    desc: PropTypes.string,
+    audioSrc: PropTypes.string,
+    imgSrc: PropTypes.string,
+};
+
+BirdDetails.defaultProps = {
+    details: {},
+    imgSrc: require('./imgs/placeholder.jpg').default,
+}
+
+BirdDetails.propTypes = {
+    details: PropTypes.object,
+    imgSrc: PropTypes.string,
+}
