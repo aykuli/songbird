@@ -32,9 +32,6 @@ function App ({ data }) {
     useEffect(() => {
         const random = Math.floor(Math.random() * categories.length);
         setIndexRight(random);
-        console.log('************************************************************');
-        console.log('верная птица ', data[categoryIndex][random].name);
-        console.log('');
     }, [categoryIndex]);
 
     const onGetAnswer = ({ target }) => {
