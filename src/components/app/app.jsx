@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,7 @@ import NextLevel from '../next-level';
 import CategoryList from '../category-list';
 import GameOver from '../game-over';
 import WinnerPage from '../winner-page';
+import SoundIndicator from '../sound-indicators';
 import ErrorBoundry from '../error-boundry';
 
 import './app.scss';
@@ -21,6 +23,7 @@ function App({ data }) {
   const [wrongIndexes, setWrongIndexes] = useState(new Set());
   const [indexRight, setIndexRight] = useState(null);
   const [categoryIndex, setCategoryIndex] = useState(0);
+  const [whatSound, setWhatSound] = useState('none');
 
   const [isRight, setIsRight] = useState(false);
   const [isRoundEnd, setIsRoundEnd] = useState(false);
@@ -50,12 +53,14 @@ function App({ data }) {
       setIsRight(true);
       setIsRoundEnd(true);
       setScore(score + data[0].length - 1 - wrongIndexes.size);
+      setWhatSound('right');
     } else if (!isRoundEnd) {
       // если кон не закончен, то продолжаем отмечать оишбочные варианты
       setWrongIndexes(prevSet => {
         if (prevSet.has(target.dataset.count)) {
           return prevSet;
         }
+        setWhatSound('wrong');
         return new Set([...Array.from(prevSet), target.dataset.count]);
       });
     }
@@ -67,6 +72,7 @@ function App({ data }) {
     setIndexRight(null);
     setIsRight(false);
     setIsRoundEnd(false);
+    setWhatSound('none');
   };
 
   const handleNextLevel = () => {
@@ -133,6 +139,7 @@ function App({ data }) {
           )}
         />
         <NextLevel isToNext={isRoundEnd} handleNextLevel={handleNextLevel} />
+        <SoundIndicator whatSound={whatSound} />
       </>
     );
   

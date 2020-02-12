@@ -44,7 +44,7 @@ module.exports = (env = {}) => {
           loader: ['babel-loader', 'eslint-loader']
         },
         {
-          test: /\.(png|gif|ico|jpeg|jpg)$/,
+          test: /\.(png|gif|ico|jpeg|jpg|mp3)$/,
           use: [
             {
               loader: 'file-loader',
