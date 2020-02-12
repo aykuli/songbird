@@ -1,3 +1,3 @@
-import WinnerPage from './winner-page.jsx';
+import WinnerPage from './winner-page';
 
 export default WinnerPage;

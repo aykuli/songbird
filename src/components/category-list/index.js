@@ -1,3 +1,3 @@
-import CategoryList from './category-list.jsx';
+import CategoryList from './category-list';
 
 export default CategoryList;

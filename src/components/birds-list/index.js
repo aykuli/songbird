@@ -1,3 +1,3 @@
-import BirdsList from './birds-list.jsx';
+import BirdsList from './birds-list';
 
 export default BirdsList;

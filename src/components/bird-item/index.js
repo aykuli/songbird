@@ -1,3 +1,3 @@
-import BirdItem from './bird-item.jsx';
+import BirdItem from './bird-item';
 
 export default BirdItem;

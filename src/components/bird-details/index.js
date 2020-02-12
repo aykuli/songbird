@@ -1,3 +1,3 @@
-import BirdDetails from './bird-details.jsx';
+import BirdDetails from './bird-details';
 
 export default BirdDetails;

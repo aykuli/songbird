@@ -1,3 +1,3 @@
-import GuessPlayer from './guess-player.jsx';
+import GuessPlayer from './guess-player';
 
 export default GuessPlayer;

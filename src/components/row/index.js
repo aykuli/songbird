@@ -1,3 +1,3 @@
-import Row from './row.jsx';
+import Row from './row';
 
 export default Row;
