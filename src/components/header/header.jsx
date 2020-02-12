@@ -9,13 +9,14 @@ const Header = ({ score, maxScore }) => {
       <div className="header__brand">
         <div className="header__icon" />
         <h1 className="header__title">SongBird </h1>
-        <p className="header__slogan">Игра &laquo;Угадай птичку! &raquo;</p>
+        <p className="header__slogan">Игра &laquo;Угадай птичку!&raquo;</p>
       </div>
       <div className="header__score">
         <span>
-          Счет:
+          Счет:&nbsp;
           {score}
-          из
+          &nbsp;
+          из&nbsp;
           {maxScore}
         </span>
       </div>

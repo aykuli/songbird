@@ -22,9 +22,9 @@ const GameOver = ({ score, maxScore, handleGameStart }) => {
         />
       </div>
       <p className="game-over__txt">
-        Вы набрали
+        Вы набрали &nbsp;
         <span className="game-over__score">{score}</span>
-        из максимальных
+        &nbsp; из максимальных &nbsp;
         {maxScore}
         .
       </p>

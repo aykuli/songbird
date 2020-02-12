@@ -39,6 +39,9 @@
 
     &__input {
         &--txt {
+            display: block;
+            width: 100%;
+            
             font-family: 'Oswald', sans-serif;
             font-size: 20px;
             line-height: 35px;
