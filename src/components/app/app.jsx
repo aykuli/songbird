@@ -31,8 +31,12 @@ function App({ data }) {
   const maxScore = categories.length * (data[0].length - 1);
 
   useEffect(() => {
-    const random = Math.floor(Math.random() * categories.length);
-    setIndexRight(random);
+    if (!isGameOver) {
+      const random = Math.floor(Math.random() * categories.length);
+      // eslint-disable-next-line no-console
+      console.log('------------------------\n\nВерный ответ', data[categoryIndex][random].name, '\n\n------------------------');
+      setIndexRight(random);
+    }
   }, [categoryIndex]);
 
   const onGetAnswer = ({ target }) => {
@@ -66,9 +70,9 @@ function App({ data }) {
   };
 
   const handleNextLevel = () => {
-    // console.log('nextlevel handling');
     if (categoryIndex === categories.length - 1) {
-      if (+score === +maxScore - data[0].length + 1) {
+      if (+score === +maxScore) {
+        clearStates();
         setIsWinner(true);
       }
       setIsGameOver(true);
@@ -94,8 +98,8 @@ function App({ data }) {
   const ToShow = () => {
     if (isWinner) {
       return <WinnerPage handleGameStart={handleGameStart} />;
-    }
-
+    } 
+    
     if (isGameOver) {
       return <GameOver score={score} handleGameStart={handleGameStart} maxScore={maxScore} />;
     }
@@ -131,7 +135,8 @@ function App({ data }) {
         <NextLevel isToNext={isRoundEnd} handleNextLevel={handleNextLevel} />
       </>
     );
-  };
+  
+};
 
   return (
     <ErrorBoundry>

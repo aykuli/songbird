@@ -11,14 +11,13 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const WinnerPage = ({ handleGameStart }) => {
   const [playerName, setPlayerName] = useState('');
-
   const date = new Date();
   const options = { month: 'long', day: 'numeric', year: 'numeric' };
   const docDefinition = pdfOptions(playerName, date, options);
 
   const handleSubmit = e => {
     e.preventDefault();
-    pdfMake.createPdf(docDefinition).download();
+    pdfMake.createPdf(docDefinition).download();  
   };
 
   const handleChange = ({ target: { value } }) => setPlayerName(value);
