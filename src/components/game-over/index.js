@@ -1,3 +1,3 @@
-import GameOver from './game-over.jsx';
+import GameOver from './game-over';
 
 export default GameOver;
