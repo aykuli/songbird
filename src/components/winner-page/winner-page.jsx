@@ -39,7 +39,7 @@ const WinnerPage = ({ handleGameStart }) => {
               onChange={handleChange}
             />
           </label>
-          <button className="winner-page__btn" type="button">
+          <button className="winner-page__btn" type="button" onClick={handleSubmit}>
             Скачать сертификат
           </button>
         </form>
