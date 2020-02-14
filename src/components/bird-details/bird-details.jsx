@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/src/styles.scss';
+
+import AudioPlayer from '../audio-player';
 import Arrow from '../arrow';
 
 import './bird-details.scss';
@@ -12,13 +12,7 @@ const Card = ({ title, latinName, desc, audioSrc, imgSrc }) => (
     <div className="bird-details__info">
       <h3 className="bird-details__title">{title}</h3>
       <p className="bird-details__latin-name">{latinName}</p>
-      <AudioPlayer
-        src={audioSrc}
-        showJumpControls={false}
-        showLoopControl={false}
-        showDownloadProgress
-        autoPlayAfterSrcChange={false}
-      />
+      <AudioPlayer url={audioSrc} isPause={false} />
     </div>
     <div className="bird-details__desc">{desc}</div>
   </div>

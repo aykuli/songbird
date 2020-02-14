@@ -1,39 +1,38 @@
-/* eslint-disable global-require */
 import React from 'react';
 import PropTypes from 'prop-types';
 
- const SoundIndicator = ({ whatSound }) => {
-    let src;
-    switch(whatSound) {
-        case 'wrong':
-            src = require('./voices/wrong-answer-sound.mp3').default;
-            break;
-        case 'right':
-            src = require('./voices/right-sound.mp3').default;
-            break;
-        default:
-            src = '';
+const SoundIndicator = ({ whatSound, isIndicate }) => {
+  const getSound = (sound) => {
+    switch(sound) {
+      case 'wrong':
+        return require('./voices/wrong-answer-sound.mp3').default;
+      case 'right':
+        return require('./voices/right-sound.mp3').default;
+      default:
+        return '';
     }
-
-    return (
-      <audio autoPlay>
-        <source src={src} type="audio/mp3" />
-        <track // это меня попросил еслинт
-          default
-          kind="captions"
-          srcLang="ru"
-          src="/"
-        />
-      </audio>
-    )
+  }
+  const srcUrl = getSound(whatSound);
+  return isIndicate ? (
+    <audio    
+      src={srcUrl}
+      hidden
+      autoPlay
+      controls
+    >
+      <track src="" kind="captions" srcLang="ru" label="sound_captions" />
+    </audio>
+  ) : null;
 }
 
 export default SoundIndicator;
 
 SoundIndicator.defaultProps = {
-    whatSound: 'none',
+  isIndicate: false,
+  whatSound: 'none',
 };
 
 SoundIndicator.propTypes = {
-    whatSound: PropTypes.string,
+  isIndicate: PropTypes.bool,
+  whatSound: PropTypes.string,
 };
