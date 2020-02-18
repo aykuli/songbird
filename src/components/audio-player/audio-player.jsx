@@ -11,7 +11,8 @@ function AudioPlayer({ url, isPause }) {
   const [audioElement, audioProps] = useAudio(url);
 
   useEffect(() => {
-    audioProps.togglePlaybackStatus();
+    if (audioProps.playbackStatus === 'play')
+    audioProps.togglePlaybackStatus('pause');
   }, [isPause]);
 
   return (
