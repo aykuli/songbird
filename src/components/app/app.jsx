@@ -110,6 +110,7 @@ function App({ data }) {
     clearStates();
   };
 
+  // eslint-disable-next-line global-require
   const getImg = imgTag => require(`../../dataBase/imgs/${imgTag}.jpg`);
 
   const Indicator = () => {

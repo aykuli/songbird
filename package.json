@@ -29,13 +29,15 @@
   "homepage": "https://github.com/aykuli/songbird#readme",
   "dependencies": {
     "core-js": "^3.6.4",
+    "direct-styled": "^1.0.1",
     "eslint-loader": "^3.0.3",
     "mini-css-extract-plugin": "^0.9.0",
     "pdfmake": "^0.1.64",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-h5-audio-player": "^2.3.1",
-    "prop-types": "^15.7.2"
+    "react-use-gesture": "^7.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

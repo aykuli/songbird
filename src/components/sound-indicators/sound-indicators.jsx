@@ -5,8 +5,10 @@ const SoundIndicator = ({ whatSound, isIndicate }) => {
   const getSound = (sound) => {
     switch(sound) {
       case 'wrong':
+         // eslint-disable-next-line
         return require('./voices/wrong-answer-sound.mp3').default;
       case 'right':
+         // eslint-disable-next-line
         return require('./voices/right-sound.mp3').default;
       default:
         return '';
