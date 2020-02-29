@@ -9,5 +9,16 @@
         }],
         "@babel/react"
     ],
+<<<<<<< HEAD
     "plugins": ["@babel/plugin-proposal-class-properties"]
+=======
+    "plugins": [
+        ["@babel/plugin-proposal-class-properties"],
+        ["@babel/plugin-transform-runtime",
+            {
+              "regenerator": true
+            }
+        ]
+    ]
+>>>>>>> 3fc9a296c954182e5ca120453e92ed98eca20d1d
 }
