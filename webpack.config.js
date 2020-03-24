@@ -170,4 +170,3 @@ module.exports = (env = {}) => {
     }
   };
 };
->>>>>>> 3fc9a296c954182e5ca120453e92ed98eca20d1d
